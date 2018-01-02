@@ -6,6 +6,7 @@ Grocery List
 
 Users 
   name, login, email, password(encrypted!!)
+  has many groceries through lists...?
   has own grocery list
   can share list with other users?
 
