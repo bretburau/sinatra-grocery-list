@@ -8,4 +8,8 @@ class UserController < ApplicationController
     get '/users/new' do
       erb :'users/new'
     end
+
+    post '/users/new' do 
+      binding.pry
+    end
 end
