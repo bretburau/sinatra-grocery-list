@@ -5,7 +5,7 @@
 <%if session[:user_id]%>
   <p>Hello <%=@user.name%></p>
 <%else%>
-  <p>you're not logged in</p>
+  <a href='/login'>Click here to log in</a>
 <%end%>
 
 <form method="POST" action='/logout'>

@@ -69,7 +69,7 @@ class UserController < ApplicationController
        erb :'users/show'
       else
         flash[:message] = "Can't find that user"
-        redirect '/'
+        erb :'index'
       end
     end
 
@@ -78,7 +78,7 @@ class UserController < ApplicationController
       @user.destroy if @user == current_user
       session.clear
       flash[:message] = "User was deleted"
-      redirect '/'
+      erb :'index'
     end
 
     post '/logout' do

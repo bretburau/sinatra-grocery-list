@@ -3,6 +3,7 @@
   <%= flash[:message] %>
 <% end %>
 
+<h3>Log in</h3>
 <form method='POST' action='login'>
   <label for='username'>Username:</label>
   <input type='text' name='username'><br>
@@ -10,3 +11,4 @@
   <input type='password' name='password'>
   <input type='submit' value='Log In'>
 </form>
+<a href='/users/new'>Create a new account</a>
