@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 
     get '/' do
-      
+      redirect 'login' if !logged_in?
       erb :index
     end 
 
@@ -13,7 +13,6 @@ class UserController < ApplicationController
       user = User.create(params[:user])
       session[:user_id] = user.id
       redirect '/'
-      # binding.pry
     end
 
     get '/login' do
@@ -21,7 +20,23 @@ class UserController < ApplicationController
     end
 
     post '/login' do
-      session[:user_id] = params[:user_id]
+      @user = User.find_by(username: params[:username])
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        redirect('/')
+      else
+        redirect('/login')
+      end
+    end
+
+    get '/users/:username' do
+      @user = User.find_by(username: params[:username])
+      erb :'users/show'
+    end
+
+    post '/logout' do
+      session.clear
+      redirect '/login'
     end
 
     def current_user
