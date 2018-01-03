@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <%if session[:user_id]%>
   <p>Hello <%=@user.name%></p>
 <%else%>

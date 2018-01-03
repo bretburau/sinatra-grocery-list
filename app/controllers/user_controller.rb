@@ -25,6 +25,7 @@ class UserController < ApplicationController
     end
 
     get '/login' do
+      redirect '/' if logged_in?
       erb :'users/login'
     end
 
@@ -39,12 +40,36 @@ class UserController < ApplicationController
       end
     end
 
+    get '/users/:username/edit' do
+      @user = User.find_by(username: params[:username])
+      if @user == current_user
+        erb :'/users/edit'
+      elsif @user && @user != current_user
+        flash[:message] = "Must be logged in to edit user info"
+        redirect '/'
+      else
+        @user == nil
+        flash[:message] = "Can't find that user"
+        redirect '/'
+      end
+    end
+
+    patch '/users/:username/edit' do
+      @user = User.find_by(username: params[:username])
+      @user.name = params[:name] if !params[:name].empty?
+      @user.username = params[:username] if !params[:username].empty?
+      @user.email = params[:email] if !params[:email].empty?
+      @user.password = params[:password] if !params[:password].empty?
+      @user.save
+      redirect "/users/#{@user.username}"
+    end
+
     get '/users/:username' do
       @user = User.find_by(username: params[:username])
       erb :'users/show'
     end
 
-    post '/logout' do
+    get '/logout' do
       session.clear
       redirect '/login'
     end
