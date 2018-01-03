@@ -65,14 +65,27 @@ class UserController < ApplicationController
     end
 
     get '/users/:username' do
-      @user = User.find_by(username: params[:username])
-      erb :'users/show'
+      if @user = User.find_by(username: params[:username])
+       erb :'users/show'
+      else
+        flash[:message] = "Can't find that user"
+        redirect '/'
+      end
     end
 
-    get '/logout' do
+    post '/users/:username/delete' do
+      @user = User.find_by(username: params[:username])
+      @user.destroy if @user == current_user
+      session.clear
+      flash[:message] = "User was deleted"
+      redirect '/'
+    end
+
+    post '/logout' do
       session.clear
       redirect '/login'
     end
+
 
     def current_user
       User.find_by_id(session[:user_id])
