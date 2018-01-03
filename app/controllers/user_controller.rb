@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 
     get '/' do
-      # binding.pry
+      
       erb :index
     end 
 
@@ -10,6 +10,13 @@ class UserController < ApplicationController
     end
 
     post '/users/new' do 
-      binding.pry
+      user = User.create(params[:user])
+      session[:user_id] = user.id
+      redirect '/'
+      # binding.pry
+    end
+
+    get '/login' do
+      erb :'users/login'
     end
 end

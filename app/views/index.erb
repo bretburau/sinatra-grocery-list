@@ -1,5 +1,6 @@
+<%binding.pry%>
 <%if session[:user_id]%>
-  <p>Hello user number #{session[:user_id]}</p>
+  <p>Hello user number <%=session[:user_id]%></p>
 <%else%>
   <p>you're not logged in</p>
 <%end%>
