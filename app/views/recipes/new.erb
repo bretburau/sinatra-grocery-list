@@ -1,0 +1,10 @@
+<h2>Create a new recipe</h2>
+<form method='POST' action='/recipe/new'>
+  <label for='name'>Name of your recipe</label>
+  <input type='text' name='name'>
+  <%Grocery.all.each do |grocery|%>
+    <label for='<%=grocery.id%>'><%=grocery.name%></label>
+    <input type='checkbox' id='<%=grocery.id%>' value='<%=grocery.name%>' name='recipe[groceries][]'>
+  <%end%>
+
+</form>
