@@ -1,18 +1,27 @@
 class UserController < ApplicationController
 
     get '/' do
-      redirect 'login' if !logged_in?
+      redirect '/login' if !logged_in?
+      @user = current_user
       erb :index
     end 
 
     get '/users/new' do
+      redirect '/' if logged_in?
       erb :'users/new'
     end
 
-    post '/users/new' do 
-      user = User.create(params[:user])
-      session[:user_id] = user.id
-      redirect '/'
+    post '/users/new' do
+      # binding.pry
+      if User.find_by(username: params[:user][:username])
+        flash[:message] = "That username has been taken...please enter a unique username"
+        redirect '/users/new' 
+      end
+      user = User.new(params[:user])
+      if user.save 
+        session[:user_id] = user.id
+        redirect '/'
+      end
     end
 
     get '/login' do
@@ -25,6 +34,7 @@ class UserController < ApplicationController
         session[:user_id] = @user.id
         redirect('/')
       else
+        flash[:message] = "Please enter a valid username/password"
         redirect('/login')
       end
     end
