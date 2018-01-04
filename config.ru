@@ -7,4 +7,5 @@ end
 use Rack::MethodOverride
 use RecipeController
 use UserController
+use GroceryController
 run ApplicationController
