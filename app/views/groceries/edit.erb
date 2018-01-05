@@ -1,4 +1,5 @@
-<h2>Edit <%=@grocery.name%></h2>
+<h2>Edit: <%=@grocery.name%></h2>
+<p>Current price: <%=@grocery.price%></p>
 
 <form method='POST' action='/groceries/<%=@grocery.slug%>/edit'>
   <input id="hidden" type="hidden" name="_method" value="patch">

@@ -36,8 +36,9 @@ class GroceryController < ApplicationController
     @grocery = Grocery.find_by_slug(params[:slug])
     @grocery.name = params[:name] if !params[:name].empty?
     @grocery.price = params[:price] if !params[:price].empty?
+    @grocery.save
     flash[:message] = "Grocery updated"
-    erb :'/groceries/#{@grocery.slug}'
+    redirect "/groceries/#{@grocery.slug}"
   end
 
   post '/groceries/:slug/delete' do
