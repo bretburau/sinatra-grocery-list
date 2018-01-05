@@ -1,0 +1,12 @@
+<h2>Edit <%=@grocery.name%></h2>
+
+<form method='POST' action='/groceries/<%=@grocery.slug%>/edit'>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for='name'>Name: </label>
+  <input type='text' name='name'><br>
+  <label for='price'>Price</label>
+  <input type='number' type='price' step='0.01' name='price'><br>
+  <input type='submit' value='Update Grocery'>
+</form>
+
+<a href='/groceries/:slug/delete'>Delete this grocery</a>

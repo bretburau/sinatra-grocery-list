@@ -6,6 +6,6 @@
 
 <%Grocery.all.each do |grocery|%>
   <ul>
-    <li><a href='<%=grocery.name%>'><%=grocery.name%></a></li>
+    <li><a href='/groceries/<%=grocery.slug%>'><%=grocery.name%></a></li>
   </ul>
 <%end%>
