@@ -22,5 +22,6 @@ class RecipeController < ApplicationController
       end
     end
     recipe.save
+    redirect '/recipes'
   end
 end

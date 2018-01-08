@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180108193848) do
     t.integer "grocery_id"
   end
 
-  create_table "recipies_groceries", force: :cascade do |t|
+  create_table "recipes_groceries", force: :cascade do |t|
     t.integer "recipe_id"
     t.integer "grocery_id"
   end
