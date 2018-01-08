@@ -1,10 +1,15 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h2>Create a new recipe</h2>
 <form method='POST' action='/recipe/new'>
   <label for='name'>Name of your recipe</label>
-  <input type='text' name='name'>
+  <input type='text' name='name'><br>
+  <p>Choose from existing groceries:</p>
   <%Grocery.all.each do |grocery|%>
+    <input type='checkbox' id='<%=grocery.id%>' value='<%=grocery.id%>' name='recipe[groceries][]'>
     <label for='<%=grocery.id%>'><%=grocery.name%></label>
-    <input type='checkbox' id='<%=grocery.id%>' value='<%=grocery.name%>' name='recipe[groceries][]'>
+    <!--Quantity:
+    <input type='number' name='<%=grocery.id%>_quantity'><br> ####figure out wherej to put quantity!?!? -->
   <%end%>
-
-</form>
