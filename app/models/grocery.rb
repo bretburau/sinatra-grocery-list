@@ -1,5 +1,7 @@
 class Grocery < ActiveRecord::Base
   belongs_to :recipe
+  has_many :recipes_groceries
+  has_many :recipes, through: :recipes_groceries
 
   def slug
     self.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
