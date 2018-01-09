@@ -15,6 +15,7 @@ class RecipeController < ApplicationController
     else
       recipe = Recipe.new
       recipe.name = params[:recipe][:name]
+      recipe.user_id = current_user.id
       params[:recipe][:groceries].each do |grocery_id|
         grocery = Grocery.find_by(id: grocery_id)
         recipe.groceries << grocery
@@ -36,14 +37,19 @@ class RecipeController < ApplicationController
 
   patch '/recipes/:slug/edit' do
     get_slug
-    @recipe.name = params[:name] if !params[:name].empty?
-    @recipe.groceries.clear
-    params[:groceries].each do |g|
-      @recipe.groceries << Grocery.find_by_id(g)
+    if @recipe.user_id == current_user.id
+      @recipe.name = params[:name] if !params[:name].empty?
+      @recipe.groceries.clear
+      params[:groceries].each do |g|
+        @recipe.groceries << Grocery.find_by_id(g)
+      end
+      @recipe.save
+      flash[:message] = "#{@recipe.name} was successfully edited"
+      erb :'/recipes/list'
+    else
+      flash[:message] = "Only the recipe's owner is able to change the recipe"
+      erb :'/recipes/list'
     end
-    @recipe.save
-    flash[:message] = "#{@recipe.name} was successfully edited"
-    erb :'/recipes/list'
   end
 
   post '/recipes/:slug/delete' do
