@@ -41,8 +41,16 @@ class RecipeController < ApplicationController
     params[:groceries].each do |g|
       @recipe.groceries << Grocery.find_by_id(g)
     end
-    @recipe.save  
-    binding.pry
+    @recipe.save
+    flash[:message] = "#{@recipe.name} was successfully edited"
+    erb :'/recipes/list'
+  end
+
+  post '/recipes/:slug/delete' do
+    get_slug
+    @recipe.destroy
+    flash[:message] = "#{@recipe.name} was successfully deleted"
+    erb :'/recipes/list'
   end
 
   def get_slug
