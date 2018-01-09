@@ -42,6 +42,6 @@ class GroceryController < ApplicationController
   end
 
   post '/groceries/:slug/delete' do
-    ###delete grocery
+    Grocery.find_by_slug(params[:slug]).destroy
   end
 end

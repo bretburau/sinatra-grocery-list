@@ -13,7 +13,6 @@ class RecipeController < ApplicationController
       flash[:message] = "Please enter a recipe name"
       erb :'/recipes/new'
     else
-      binding.pry
       recipe = Recipe.new
       recipe.name = params[:recipe][:name]
       params[:recipe][:groceries].each do |grocery_id|
@@ -23,5 +22,10 @@ class RecipeController < ApplicationController
     end
     recipe.save
     redirect '/recipes'
+  end
+
+  get '/recipes/:slug' do
+    @recipe = Recipe.find_by_slug(params[:slug])
+    erb :'/recipes/show'
   end
 end
