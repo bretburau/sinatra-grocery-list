@@ -4,6 +4,10 @@
   <label for='name'>Enter new name if needed:</label>
   <input name='name' type='text'>
   <br>
-  <%Grocery.all each do |grocery|%>
-    <input type='checkbox' <%='checked' if @recipe.groceries%>>
+  <%Grocery.all.each do |grocery|%>
+    <label for=<%=grocery.id%>><%=grocery.name%></label>
+    <input type='checkbox' <%='checked' if @recipe.groceries.include?(grocery)%> name='groceries[]' value='<%=grocery.id%>'>
   <%end%>
+  <br>
+  <input type='submit' value='Edit recipe'>
+</form>

@@ -25,7 +25,27 @@ class RecipeController < ApplicationController
   end
 
   get '/recipes/:slug' do
-    @recipe = Recipe.find_by_slug(params[:slug])
+    get_slug
     erb :'/recipes/show'
+  end
+
+  get '/recipes/:slug/edit' do
+    get_slug
+    erb :'/recipes/edit'
+  end
+
+  patch '/recipes/:slug/edit' do
+    get_slug
+    @recipe.name = params[:name] if !params[:name].empty?
+    @recipe.groceries.clear
+    params[:groceries].each do |g|
+      @recipe.groceries << Grocery.find_by_id(g)
+    end
+    @recipe.save  
+    binding.pry
+  end
+
+  def get_slug
+    @recipe = Recipe.find_by_slug(params[:slug])
   end
 end
