@@ -1,0 +1,9 @@
+<h2>Edit recipe: <%=@recipe.name%></h2>
+<form method='POST' action='/recipes/<%=@recipe.slug%>/edit'>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for='name'>Enter new name if needed:</label>
+  <input name='name' type='text'>
+  <br>
+  <%Grocery.all each do |grocery|%>
+    <input type='checkbox' <%='checked' if @recipe.groceries%>>
+  <%end%>
