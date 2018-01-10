@@ -1,3 +1,6 @@
+<%=erb :'/partials/header'%>
+<body>
+
 <h2>Create a new recipe</h2>
 <form method='POST' action='/recipes/new'>
   <label for='name'>Name of your recipe</label>
@@ -12,3 +15,5 @@
   <br>
   <input type='submit' value='Create Recipe'>
 </form>
+
+<%=erb :'partials/footer'%>

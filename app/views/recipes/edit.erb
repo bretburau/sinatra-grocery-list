@@ -1,3 +1,6 @@
+<%=erb :'/partials/header'%>
+<body>
+
 <h2>Edit recipe: <%=@recipe.name%></h2>
 <form method='POST' action='/recipes/<%=@recipe.slug%>/edit'>
   <input id="hidden" type="hidden" name="_method" value="patch">
@@ -14,3 +17,5 @@
 <form method="POST" action='/recipes/<%=@recipe.slug%>/delete'>
   <input type='submit' value='DELETE RECIPE'>
 </form>
+
+<%=erb :'partials/footer'%>

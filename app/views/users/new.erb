@@ -1,4 +1,5 @@
-
+<%=erb :'/partials/header'%>
+<body>
 
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
@@ -15,3 +16,5 @@
   <input type='password' name='user[password]'><br>
   <input type='submit' value='submit'>
 </form>
+
+<%=erb :'partials/footer'%>

@@ -1,3 +1,5 @@
+<%=erb :'/partials/header'%>
+<body>
 
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
@@ -12,3 +14,5 @@
   <input type='submit' value='Log In'>
 </form>
 <a href='/users/new'>Create a new account</a>
+
+<%=erb :'partials/footer'%>

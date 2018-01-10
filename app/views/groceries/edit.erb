@@ -1,3 +1,6 @@
+<%=erb :'/partials/header'%>
+<body>
+
 <h2>Edit: <%=@grocery.name%></h2>
 <p>Current price: <%=@grocery.price%></p>
 
@@ -11,3 +14,5 @@
 </form>
 
 <a href='/groceries/:slug/delete'>Delete this grocery</a>
+
+<%=erb :'partials/footer'%>

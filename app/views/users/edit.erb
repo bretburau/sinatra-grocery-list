@@ -1,3 +1,6 @@
+<%=erb :'/partials/header'%>
+<body>
+
 <h2>User: <%=@user.name%></h2>
 <p>Username: <%=@user.username%></p>
 <p>Email: <%=@user.email%></p>
@@ -18,3 +21,5 @@
 <form method='POST' action='/users/<%=@user.username%>/delete'>
   <input type='submit' value='Delete This User'>
 </form>
+
+<%=erb :'partials/footer'%>

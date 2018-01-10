@@ -1,3 +1,6 @@
+<%=erb :'/partials/header'%>
+<body>
+
 <h2>Recipe:<%=@recipe.name%></h2>
 <h3>Created by: <%=User.find_by_id(@recipe.user_id).name%></h3>
 <ul>
@@ -6,3 +9,5 @@
   <%end%>
 </ul>
 <a href='/recipes/<%=@recipe.slug%>/edit'>Edit this recipe</a><br>
+
+<%=erb :'partials/footer'%>

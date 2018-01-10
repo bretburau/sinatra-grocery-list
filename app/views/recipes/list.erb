@@ -1,3 +1,6 @@
+<%=erb :'/partials/header'%>
+<body>
+
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
@@ -8,3 +11,5 @@
     <li><a href='/recipes/<%=recipe.slug%>'><%=recipe.name%></a></li>
   <%end%>
 </ul>
+
+<%=erb :'partials/footer'%>
