@@ -1,25 +1,27 @@
 <%=erb :'/partials/header'%>
 <body>
 
-<h2>User: <%=@user.name%></h2>
-<p>Username: <%=@user.username%></p>
-<p>Email: <%=@user.email%></p>
+<div class='container'>
+  <h2>User: <%=@user.name%></h2>
+  <p>Username: <%=@user.username%></p>
+  <p>Email: <%=@user.email%></p>
 
-<form method='POST' action='/users/<%=@user.username%>/edit'>
-  <input id="hidden" type="hidden" name="_method" value="patch">
-  <label for='name'>Enter new name:</label>
-  <input type='text' name='name'><br>
-  <label for='username'>Enter new username:</label>
-  <input type='text' name='username'><br>
-  <label for='email'>Enter new email:</label>
-  <input type='text' name='email'><br>
-  <label for='password'>Enter new password:</label>
-  <input type='password' name='password'><br>
-  <input type='submit' value='submit'>
-</form>
+  <form method='POST' action='/users/<%=@user.username%>/edit'>
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for='name'>Enter new name:</label>
+    <input type='text' name='name'><br>
+    <label for='username'>Enter new username:</label>
+    <input type='text' name='username'><br>
+    <label for='email'>Enter new email:</label>
+    <input type='text' name='email'><br>
+    <label for='password'>Enter new password:</label>
+    <input type='password' name='password'><br>
+    <input type='submit' value='submit'>
+  </form>
 
-<form method='POST' action='/users/<%=@user.username%>/delete'>
-  <input type='submit' value='Delete This User'>
-</form>
+  <form method='POST' action='/users/<%=@user.username%>/delete'>
+    <input type='submit' value='Delete This User' class='btn-default'> 
+  </form>
+</div>
 
 <%=erb :'partials/footer'%>

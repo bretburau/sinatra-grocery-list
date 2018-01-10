@@ -1,13 +1,15 @@
 <%=erb :'/partials/header'%>
 <body>
 
-<h2>Recipe:<%=@recipe.name%></h2>
-<h3>Created by: <%=User.find_by_id(@recipe.user_id).name%></h3>
-<ul>
-  <%@recipe.groceries.all.each do |grocery|%>
-    <li><%=grocery.name%></li>
-  <%end%>
-</ul>
-<a href='/recipes/<%=@recipe.slug%>/edit'>Edit this recipe</a><br>
+<div class='container'>
+  <h2>Recipe:<%=@recipe.name%></h2>
+  <h3>Created by: <%=User.find_by_id(@recipe.user_id).name%></h3>
+  <ul>
+    <%@recipe.groceries.all.each do |grocery|%>
+      <li><%=grocery.name%></li>
+    <%end%>
+  </ul>
+  <a href='/recipes/<%=@recipe.slug%>/edit'>Edit this recipe</a><br>
+</div>
 
 <%=erb :'partials/footer'%>

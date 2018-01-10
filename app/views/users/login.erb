@@ -1,18 +1,20 @@
 <%=erb :'/partials/header'%>
 <body>
 
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
+<div class='container'>
+  <% if flash.has?(:message) %>
+    <%= flash[:message] %>
+  <% end %>
 
-<h3>Log in</h3>
-<form method='POST' action='login'>
-  <label for='username'>Username:</label>
-  <input type='text' name='username'><br>
-  <label for='password'>Password:</label>
-  <input type='password' name='password'>
-  <input type='submit' value='Log In'>
-</form>
-<a href='/users/new'>Create a new account</a>
+  <h3>Log in</h3>
+  <form method='POST' action='login'>
+    <label for='username'>Username:</label>
+    <input type='text' name='username'><br>
+    <label for='password'>Password:</label>
+    <input type='password' name='password'>
+    <input type='submit' value='Log In' class='btn-default'>
+  </form>
+  <a href='/users/new'>Create a new account</a>
+</div>
 
 <%=erb :'partials/footer'%>

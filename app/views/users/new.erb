@@ -1,20 +1,23 @@
 <%=erb :'/partials/header'%>
 <body>
 
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
+<div class='container'>
 
-<form method='POST' action='/users/new'>
-  <label for='name'>Enter your name:</label>
-  <input type='text' name='user[name]'><br>
-  <label for='username'>Enter your username:</label>
-  <input type='text' name='user[username]'><br>
-  <label for='email'>Enter your email:</label>
-  <input type='email' name='user[email]'><br>
-  <label for='password'>Enter your password:</label>
-  <input type='password' name='user[password]'><br>
-  <input type='submit' value='submit'>
-</form>
+  <% if flash.has?(:message) %>
+    <%= flash[:message] %>
+  <% end %>
+
+  <form method='POST' action='/users/new'>
+    <label for='name'>Enter your name:</label>
+    <input type='text' name='user[name]'><br>
+    <label for='username'>Enter your username:</label>
+    <input type='text' name='user[username]'><br>
+    <label for='email'>Enter your email:</label>
+    <input type='email' name='user[email]'><br>
+    <label for='password'>Enter your password:</label>
+    <input type='password' name='user[password]'><br>
+    <input type='submit' value='submit' class='btn-default'>
+  </form>
+</div>
 
 <%=erb :'partials/footer'%>

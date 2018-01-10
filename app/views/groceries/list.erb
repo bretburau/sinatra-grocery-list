@@ -1,16 +1,16 @@
 <%=erb :'/partials/header'%>
 <body>
+<div class='container'>
+  <h2>All Groceries:</h2>
 
-<h2>All Groceries:</h2>
+  <% if flash.has?(:message) %>
+    <%= flash[:message] %>
+  <% end %>
 
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
-
-<%Grocery.all.each do |grocery|%>
-  <ul>
-    <li><a href='/groceries/<%=grocery.slug%>'><%=grocery.name%></a></li>
-  </ul>
-<%end%>
-
+  <%Grocery.all.each do |grocery|%>
+    <ul>
+      <li><a href='/groceries/<%=grocery.slug%>'><%=grocery.name%></a></li>
+    </ul>
+  <%end%>
+</div>
 <%=erb :'partials/footer'%>

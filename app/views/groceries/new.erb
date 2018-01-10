@@ -1,17 +1,17 @@
 <%=erb :'/partials/header'%>
 <body>
+<div class='container'>
+  <h2>Add a new grocery:</h2>
 
-<h2>Add a new grocery:</h2>
-
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
-<form method='POST' action='/groceries/new'>
-<label for='grocery[name]'>Name:</label>
-<input name='grocery[name]' type='text'><br>
-<label for='grocery[price]'>Price:</label>
-<input name='grocery[price]' type='number' step='0.01'><br>
-<input type='submit' value='Create Grocery'>
-</form>
-
+  <% if flash.has?(:message) %>
+    <%= flash[:message] %>
+  <% end %>
+  <form method='POST' action='/groceries/new'>
+  <label for='grocery[name]'>Name:</label>
+  <input name='grocery[name]' type='text'><br>
+  <label for='grocery[price]'>Price:</label>
+  <input name='grocery[price]' type='number' step='0.01'><br>
+  <input type='submit' value='Create Grocery' class='btn-default'>
+  </form>
+</div>
 <%=erb :'partials/footer'%>

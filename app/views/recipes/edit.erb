@@ -1,21 +1,22 @@
 <%=erb :'/partials/header'%>
 <body>
-
-<h2>Edit recipe: <%=@recipe.name%></h2>
-<form method='POST' action='/recipes/<%=@recipe.slug%>/edit'>
-  <input id="hidden" type="hidden" name="_method" value="patch">
-  <label for='name'>Enter new name if needed:</label>
-  <input name='name' type='text'>
-  <br>
-  <%Grocery.all.each do |grocery|%>
-    <label for=<%=grocery.id%>><%=grocery.name%></label>
-    <input type='checkbox' <%='checked' if @recipe.groceries.include?(grocery)%> name='groceries[]' value='<%=grocery.id%>'><br>
-  <%end%>
-  <br>
-  <input type='submit' value='Edit recipe'>
-</form>
-<form method="POST" action='/recipes/<%=@recipe.slug%>/delete'>
-  <input type='submit' value='DELETE RECIPE'>
-</form>
+<div class='container'>
+  <h2>Edit recipe: <%=@recipe.name%></h2>
+  <form method='POST' action='/recipes/<%=@recipe.slug%>/edit'>
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for='name'>Enter new name if needed:</label>
+    <input name='name' type='text'>
+    <br>
+    <%Grocery.all.each do |grocery|%>
+      <label for=<%=grocery.id%>><%=grocery.name%></label>
+      <input type='checkbox' <%='checked' if @recipe.groceries.include?(grocery)%> name='groceries[]' value='<%=grocery.id%>'><br>
+    <%end%>
+    <br>
+    <input type='submit' value='Edit recipe'>
+  </form>
+  <form method="POST" action='/recipes/<%=@recipe.slug%>/delete'>
+    <input type='submit' value='DELETE RECIPE' class='btn-default'>
+  </form>
+</div>
 
 <%=erb :'partials/footer'%>
