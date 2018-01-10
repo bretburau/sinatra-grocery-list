@@ -6,8 +6,8 @@
   <%Grocery.all.each do |grocery|%>
     <input type='checkbox' id='<%=grocery.id%>' value='<%=grocery.id%>' name='recipe[groceries][]'>
     <label for='<%=grocery.id%>'><%=grocery.name%></label>
-    <!--Quantity:
-    <input type='number' name='<%=grocery.id%>_quantity'><br> ####figure out wherej to put quantity!?!? -->
+    Quantity:
+    <input type='number' name='quantity'><br> <!--####figure out wherej to put quantity!?!? -->
   <%end%>
   <br>
   <input type='submit' value='Create Recipe'>

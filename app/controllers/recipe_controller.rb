@@ -1,6 +1,7 @@
 class RecipeController < ApplicationController
 
   get '/recipes' do
+    flash[:message] = ""
     erb :'/recipes/list'
   end
 
@@ -9,6 +10,7 @@ class RecipeController < ApplicationController
   end
 
   post '/recipes/new' do
+    binding.pry
     if params[:recipe][:name].empty?
       flash[:message] = "Please enter a recipe name"
       erb :'/recipes/new'
