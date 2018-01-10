@@ -1,8 +1,8 @@
 <%=erb :'/partials/header'%>
-<body>
+
 <div class='container'>
   <% if flash.has?(:message) %>
-    <%= flash[:message] %>
+    <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
   <% end %>
 
   <h2>All Recipes</h2>

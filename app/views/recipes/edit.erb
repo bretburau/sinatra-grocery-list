@@ -1,5 +1,4 @@
 <%=erb :'/partials/header'%>
-<body>
 <div class='container'>
   <h2>Edit recipe: <%=@recipe.name%></h2>
   <form method='POST' action='/recipes/<%=@recipe.slug%>/edit'>
