@@ -39,7 +39,8 @@ class RecipeController < ApplicationController
 
   patch '/recipes/:slug/edit' do
     get_slug
-    if @recipe.user_id == current_user.id
+    binding.pry
+    if current_user && @recipe.user_id == current_user.id #Tests if sombody is logged in and if it's correct user
       @recipe.name = params[:name] if !params[:name].empty?
       @recipe.groceries.clear
       params[:groceries].each do |g|
