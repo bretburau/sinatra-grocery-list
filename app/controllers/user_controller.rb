@@ -12,7 +12,6 @@ class UserController < ApplicationController
     end
 
     post '/users/new' do
-      # binding.pry
       if User.find_by(username: params[:user][:username])
         flash[:message] = "That username has been taken...please enter a unique username"
         redirect '/users/new' 
