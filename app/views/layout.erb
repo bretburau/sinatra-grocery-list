@@ -22,9 +22,13 @@
           <li><a href="/recipes">Recipes</a></li>
           <li><a href="#">Page 3</a></li>
         </ul>
-        <form method='POST' action='/logout'>
-          <button type="submit" class="btn btn-default navbar-btn navbar-right nav-button">Logout</button>
-        </form>
+        <%if session[:user_id]%>
+          <form method='POST' action='/logout'>
+            <button type="submit" class="btn btn-default navbar-btn navbar-right nav-button">Logout</button>
+          </form>
+        <%else%>
+          <a href='/login' class="btn btn-default navbar-btn navbar-right nav-button">Login</a>
+        <%end%>
       </div>
     </nav>
 

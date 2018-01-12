@@ -6,3 +6,11 @@ body {
 .navbar-right {
   margin-right: 25px;
 }
+
+nav li {
+  font-size: 1.5rem;
+}
+
+input {
+  color: black;
+}
