@@ -10,17 +10,20 @@ class RecipeController < ApplicationController
   end
 
   post '/recipes/new' do
-    binding.pry
-    if params[:recipe][:name].empty?
+    # binding.pry
+    redirect '/login' if !logged_in?
+    if params[:name].empty?
       flash[:message] = "Please enter a recipe name"
       erb :'/recipes/new'
     else
       recipe = Recipe.new
-      recipe.name = params[:recipe][:name]
+      recipe.name = params[:name]
       recipe.user_id = current_user.id
-      params[:recipe][:groceries].each do |grocery_id|
-        grocery = Grocery.find_by(id: grocery_id)
-        recipe.groceries << grocery
+      params[:groceries].each do |grocery_id|
+        if !grocery_id == 0
+          grocery = Grocery.find_by(id: grocery_id)
+          recipe.groceries << grocery
+        end
       end
     end
     recipe.save
