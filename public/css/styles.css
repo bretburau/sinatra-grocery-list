@@ -8,6 +8,11 @@ h2 {
   margin: 2rem;
 }
 
+input[type=text], input[type=password], input[type=number] {
+  margin: 1rem;
+  width: 20%;
+}
+
 .navbar-right {
   margin-right: 25px;
 }
@@ -31,6 +36,11 @@ input {
   color: black;
 }
 
+.btn {
+  margin: 1rem;
+  background-color: #909590;
+  color: ##818AA3;
+}
 .container p {
   font-size: 2rem;
 }
@@ -47,4 +57,8 @@ input {
   width: 40%;
   text-align: center;
   margin: 0 auto;
+}
+
+.list-group a {
+  color: #E8DAB2;
 }

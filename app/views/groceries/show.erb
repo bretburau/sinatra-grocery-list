@@ -1,5 +1,11 @@
 
 <div class='container'>
+
+  <% if flash[:message] %>
+    <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
+    <br><br>
+  <% end %>
+  
   <h2>Grocery: <%=@grocery.name%></h2>
   <p>Price: $<%=@grocery.price%></p>
   <a class='btn btn-default' href='/groceries/<%=@grocery.slug%>/edit'>Edit this grocery</a>
