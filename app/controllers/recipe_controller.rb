@@ -21,6 +21,7 @@ class RecipeController < ApplicationController
       params[:groceries].each do |e|
         if e[:grocery_id].to_i != 0
           grocery = Grocery.find_by(id: e[:grocery_id])
+          ##TODO need to figure in grocery quantity somehow
           recipe.groceries << grocery
         end
       end

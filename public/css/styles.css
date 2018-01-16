@@ -7,10 +7,26 @@ body {
   margin-right: 25px;
 }
 
+.navbar {
+  background-color: #E8DAB2;
+}
+
 nav li {
   font-size: 1.5rem;
 }
 
 input {
   color: black;
+}
+
+.container p {
+  font-size: 2rem;
+}
+
+.list-group-item {
+  background-color: #818AA3;
+}
+
+a.list-group-item {
+  /* color: white */
 }

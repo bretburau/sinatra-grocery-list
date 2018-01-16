@@ -1,8 +1,8 @@
 
 <div class='container'>
-  <h2>Grocery:<%=@grocery.name%></h2>
+  <h2>Grocery: <%=@grocery.name%></h2>
   <p>Price: $<%=@grocery.price%></p>
-  <a href='/groceries/<%=@grocery.slug%>/edit'>Edit this grocery</a><br> 
-  <a href='/groceries/<%=@grocery.slug%>/delete'>Delete this grocery</a>
+  <a class='btn btn-default' href='/groceries/<%=@grocery.slug%>/edit'>Edit this grocery</a>
+  <a class='btn btn-default' href='/groceries/<%=@grocery.slug%>/delete'>Delete this grocery</a>
 </div>
 

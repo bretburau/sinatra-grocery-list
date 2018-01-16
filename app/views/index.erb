@@ -2,6 +2,7 @@
 <div class='container'>
   <% if flash[:message] %>
     <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
+    <br><br>
   <% end %>
   <%if session[:user_id]%>
     <h2>Welcome <%=@user.name%>!</h2>

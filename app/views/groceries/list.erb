@@ -4,11 +4,12 @@
 
   <% if flash[:message] %>
     <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
+    <br><br>
   <% end %>
 
-  <%Grocery.all.each do |grocery|%>
-    <ul>
-      <li><a href='/groceries/<%=grocery.slug%>'><%=grocery.name%></a></li>
-    </ul>
-  <%end%>
+  <div class='list-group'>
+    <%Grocery.all.each do |grocery|%>
+      <a class='list-group-item' href='/groceries/<%=grocery.slug%>'><%=grocery.name%></a>
+    <%end%>
+  </div>
 </div>

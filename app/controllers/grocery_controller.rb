@@ -23,13 +23,11 @@ class GroceryController < ApplicationController
   get '/groceries/:slug' do
     @grocery = Grocery.find_by_slug(params[:slug])
     erb :'/groceries/show'
-    ##Show page for slugged ingredient TODO 
   end
 
   get '/groceries/:slug/edit' do
     @grocery = Grocery.find_by_slug(params[:slug])
     erb :'/groceries/edit'
-    ##show page for patching ingredient via slug TODO
   end
 
   patch '/groceries/:slug/edit' do
