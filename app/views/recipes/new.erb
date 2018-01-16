@@ -3,6 +3,12 @@
 
 <div class='container'>
   <h2>Create a new recipe</h2>
+  <% if flash[:message] %>
+    <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
+    <br>
+    <br>
+  <% end %>
+  
   <form method='POST' action='/recipes/new'>
     <label for='name'>Name of your recipe</label>
     <input type='text' name='name'><br>

@@ -4,7 +4,7 @@
 
 <div class='container'>
 
-  <% if flash.has?(:message) %>
+  <% if flash[:message] %>
     <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
   <% end %>
 

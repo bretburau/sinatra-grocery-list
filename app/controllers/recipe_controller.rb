@@ -1,7 +1,7 @@
 class RecipeController < ApplicationController
 
   get '/recipes' do
-    flash[:message] = ""
+    # flash[:message] = "" #Not sure what this is for
     erb :'/recipes/list'
   end
 
@@ -11,9 +11,9 @@ class RecipeController < ApplicationController
 
   post '/recipes/new' do
     redirect '/login' if !logged_in?
-    if params[:name].empty?
+    if params[:name] = ''
       flash[:message] = "Please enter a recipe name"
-      erb :'/recipes/new'
+      redirect '/recipes/new'
     else
       recipe = Recipe.new
       recipe.name = params[:name]
