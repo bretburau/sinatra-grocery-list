@@ -3,16 +3,28 @@ body {
   color: #E8DAB2;
 }
 
+h2 {
+  font-size: 3rem;
+  margin: 2rem;
+}
+
 .navbar-right {
   margin-right: 25px;
 }
 
 .navbar {
-  background-color: #E8DAB2;
+  background-color: #818AA3;
+  color: #E8DAB2;
+}
+
+.navbar a.navbar-brand, .navbar-default .navbar-nav>li>a {
+  color: #E8DAB2;
+
 }
 
 nav li {
   font-size: 1.5rem;
+  
 }
 
 input {
@@ -23,10 +35,16 @@ input {
   font-size: 2rem;
 }
 
+.container {
+  text-align: center;
+}
+
 .list-group-item {
   background-color: #818AA3;
 }
 
-a.list-group-item {
-  /* color: white */
+.list-group {
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
 }
