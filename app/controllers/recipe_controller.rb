@@ -19,12 +19,12 @@ class RecipeController < ApplicationController
       recipe.name = params[:name]
       recipe.user_id = current_user.id
       params[:groceries].each do |e|
-        # binding.pry
         if e[:grocery_id].to_i != 0
           grocery = Grocery.find_by(id: e[:grocery_id])
           recipe.groceries << grocery
         end
       end
+      binding.pry
     end
     recipe.save
     redirect '/recipes'

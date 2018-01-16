@@ -1,6 +1,6 @@
 
 <div class='container'>
-  <% if flash.has?(:message) %>
+  <% if flash[:message] %>
     <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
   <% end %>
 
@@ -10,8 +10,7 @@
     <a href='/login'>Click here to log in</a>
   <%end%>
 
-  <form method="POST" action='/logout'>
-    <input type='submit' value='Log Out' class='btn-default'>
-  </form>
+  <a href='/groceries' class='btn btn-default'>View Groceries</a>
+  <a href='/recipes' class='btn btn-default'>View Recipes</a>
 </div>
 
