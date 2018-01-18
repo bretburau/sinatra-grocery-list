@@ -5,5 +5,11 @@
   <h2>Name: <%=@user.name%></h2>
   <p>Username: <%=@user.username%></p>
   <p>Email address: <%=@user.email%></p>
+  <h3><%=@user.name%>'s recipes:</h3>
+  <div class='list-group'>
+    <%@user.recipes.all.each do |recipe|%>
+      <a class='list-group-item' href='/recipes/<%=recipe.slug%>'><%=recipe.name%></a>
+    <%end%>
+  </div>
 </div>
 
