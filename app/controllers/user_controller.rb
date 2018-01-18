@@ -7,6 +7,7 @@ class UserController < ApplicationController
     end 
 
     get '/users' do
+      @user = current_user
       erb :'/users/list'
     end
 

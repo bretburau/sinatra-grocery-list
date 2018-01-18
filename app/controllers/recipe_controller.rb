@@ -11,7 +11,6 @@ class RecipeController < ApplicationController
 
   post '/recipes/new' do
     redirect '/login' if !logged_in?
-    binding.pry
     if params[:name].empty?
       flash[:message] = "Please enter a recipe name"
       redirect '/recipes/new'
