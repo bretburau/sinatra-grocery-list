@@ -26,7 +26,6 @@ class RecipeController < ApplicationController
           recipe.groceries << grocery
         end
       end
-      binding.pry
     end
     recipe.save
     redirect '/recipes'
@@ -44,7 +43,6 @@ class RecipeController < ApplicationController
 
   patch '/recipes/:slug/edit' do
     get_slug
-    binding.pry
     if current_user && @recipe.user_id == current_user.id #Tests if sombody is logged in and if it's correct user
       @recipe.name = params[:name] if !params[:name].empty?
       @recipe.groceries.clear
@@ -62,9 +60,14 @@ class RecipeController < ApplicationController
 
   post '/recipes/:slug/delete' do
     get_slug
-    @recipe.destroy
-    flash[:message] = "#{@recipe.name} was successfully deleted"
-    erb :'/recipes/list'
+    if current_user && @recipe.user_id == current_user.id
+      @recipe.destroy
+      flash[:message] = "#{@recipe.name} was successfully deleted"
+      erb :'/recipes/list'
+    else
+      flash[:message] = "Only the recipe's owner is able to change the recipe"
+      erb :'/recipes/list'
+    end
   end
 
   def get_slug

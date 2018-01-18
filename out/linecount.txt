@@ -1,0 +1,56 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2018-01-17 07:07:48
+count workspace : /home/bretburau/dev/sinatra-grocery-list
+total files : 44
+total code lines : 795
+total comment lines : 16
+total blank lines : 150
+
+app/controllers/application_controller.rb, code is 17, comment is 0, blank is 4.
+app/controllers/grocery_controller.rb, code is 38, comment is 0, blank is 7.
+app/controllers/recipe_controller.rb, code is 61, comment is 3, blank is 8.
+app/controllers/user_controller.rb, code is 80, comment is 0, blank is 11.
+app/models/grocery.rb, code is 11, comment is 0, blank is 2.
+app/models/recipe.rb, code is 11, comment is 0, blank is 2.
+app/models/recipes_grocery.rb, code is 4, comment is 0, blank is 0.
+app/models/user.rb, code is 4, comment is 1, blank is 0.
+app/views/groceries/edit.erb, code is 13, comment is 0, blank is 5.
+app/views/groceries/list.erb, code is 13, comment is 0, blank is 3.
+app/views/groceries/new.erb, code is 14, comment is 0, blank is 2.
+app/views/groceries/show.erb, code is 10, comment is 0, blank is 4.
+app/views/index.erb, code is 13, comment is 0, blank is 3.
+app/views/layout.erb, code is 38, comment is 0, blank is 4.
+app/views/partials/footer.erb, code is 5, comment is 0, blank is 0.
+app/views/partials/header.erb, code is 14, comment is 0, blank is 1.
+app/views/partials/navbar.erb, code is 15, comment is 0, blank is 0.
+app/views/recipes/edit.erb, code is 18, comment is 0, blank is 2.
+app/views/recipes/list.erb, code is 13, comment is 0, blank is 6.
+app/views/recipes/new.erb, code is 22, comment is 0, blank is 6.
+app/views/recipes/show.erb, code is 13, comment is 0, blank is 5.
+app/views/users/edit.erb, code is 20, comment is 0, blank is 7.
+app/views/users/list.erb, code is 6, comment is 0, blank is 1.
+app/views/users/login.erb, code is 16, comment is 0, blank is 8.
+app/views/users/new.erb, code is 17, comment is 0, blank is 7.
+app/views/users/show.erb, code is 5, comment is 0, blank is 4.
+config.ru, code is 9, comment is 0, blank is 2.
+config/environment.rb, code is 8, comment is 0, blank is 3.
+db/development.sqlite, it is a binary file.
+db/migrate/20180102170301_create_groceries.rb, code is 8, comment is 0, blank is 1.
+db/migrate/20180102170617_create_users.rb, code is 10, comment is 0, blank is 1.
+db/migrate/20180102201514_create_recipes.rb, code is 9, comment is 0, blank is 0.
+db/migrate/20180104163231_change_grocery_column.rb, code is 5, comment is 0, blank is 0.
+db/migrate/20180108193848_create_recipes_groceries.rb, code is 8, comment is 0, blank is 0.
+db/migrate/20180109121140_rename_price_to_user.rb, code is 5, comment is 0, blank is 0.
+db/migrate/20180109194945_add_quantity_to_grocery.rb, code is 5, comment is 0, blank is 0.
+db/schema.rb, code is 22, comment is 11, blank is 6.
+Gemfile, code is 21, comment is 0, blank is 5.
+Gemfile.lock, code is 87, comment is 1, blank is 3.
+LICENSE, code is 17, comment is 0, blank is 4.
+public/css/styles.css, code is 50, comment is 0, blank is 14.
+Rakefile, code is 11, comment is 0, blank is 4.
+sinatra_project.md, code is 21, comment is 0, blank is 4.
+spec.md, code is 8, comment is 0, blank is 1.
+===============================================================================

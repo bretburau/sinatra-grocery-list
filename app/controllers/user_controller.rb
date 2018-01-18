@@ -6,6 +6,10 @@ class UserController < ApplicationController
       erb :index
     end 
 
+    get '/users' do
+      erb :'/users/list'
+    end
+
     get '/users/new' do
       redirect '/' if logged_in?
       erb :'users/new'

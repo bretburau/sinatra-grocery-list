@@ -1,0 +1,282 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "/home/bretburau/dev/sinatra-grocery-list",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2018-01-17 07:07:48",
+            "filesum": 44,
+            "codesum": 795,
+            "commentsum": 16,
+            "blanksum": 150,
+            "filelist": [
+                {
+                    "blank": 4,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "app/controllers/application_controller.rb"
+                },
+                {
+                    "blank": 7,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "app/controllers/grocery_controller.rb"
+                },
+                {
+                    "blank": 8,
+                    "code": 61,
+                    "comment": 3,
+                    "filename": "app/controllers/recipe_controller.rb"
+                },
+                {
+                    "blank": 11,
+                    "code": 80,
+                    "comment": 0,
+                    "filename": "app/controllers/user_controller.rb"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "app/models/grocery.rb"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "app/models/recipe.rb"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "app/models/recipes_grocery.rb"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "app/models/user.rb"
+                },
+                {
+                    "blank": 5,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "app/views/groceries/edit.erb"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "app/views/groceries/list.erb"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "app/views/groceries/new.erb"
+                },
+                {
+                    "blank": 4,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "app/views/groceries/show.erb"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "app/views/index.erb"
+                },
+                {
+                    "blank": 4,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "app/views/layout.erb"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "app/views/partials/footer.erb"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "app/views/partials/header.erb"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "app/views/partials/navbar.erb"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "app/views/recipes/edit.erb"
+                },
+                {
+                    "blank": 6,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "app/views/recipes/list.erb"
+                },
+                {
+                    "blank": 6,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "app/views/recipes/new.erb"
+                },
+                {
+                    "blank": 5,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "app/views/recipes/show.erb"
+                },
+                {
+                    "blank": 7,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "app/views/users/edit.erb"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "app/views/users/list.erb"
+                },
+                {
+                    "blank": 8,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "app/views/users/login.erb"
+                },
+                {
+                    "blank": 7,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "app/views/users/new.erb"
+                },
+                {
+                    "blank": 4,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "app/views/users/show.erb"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "config.ru"
+                },
+                {
+                    "blank": 3,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "config/environment.rb"
+                },
+                {
+                    "filename": "db/development.sqlite",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "db/migrate/20180102170301_create_groceries.rb"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "db/migrate/20180102170617_create_users.rb"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "db/migrate/20180102201514_create_recipes.rb"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "db/migrate/20180104163231_change_grocery_column.rb"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "db/migrate/20180108193848_create_recipes_groceries.rb"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "db/migrate/20180109121140_rename_price_to_user.rb"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "db/migrate/20180109194945_add_quantity_to_grocery.rb"
+                },
+                {
+                    "blank": 6,
+                    "code": 22,
+                    "comment": 11,
+                    "filename": "db/schema.rb"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Gemfile"
+                },
+                {
+                    "blank": 3,
+                    "code": 87,
+                    "comment": 1,
+                    "filename": "Gemfile.lock"
+                },
+                {
+                    "blank": 4,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "LICENSE"
+                },
+                {
+                    "blank": 14,
+                    "code": 50,
+                    "comment": 0,
+                    "filename": "public/css/styles.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "Rakefile"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "sinatra_project.md"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "spec.md"
+                }
+            ]
+        }
+    ]
+}

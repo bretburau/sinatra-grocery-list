@@ -1,0 +1,7 @@
+
+<h2>All Users</h2>
+  <div class='list-group'>
+    <%User.all.each do |user|%>
+      <a class='list-group-item' href='/users/<%=user.name%>'><%=user.name%></a>
+    <%end%>
+  </div>

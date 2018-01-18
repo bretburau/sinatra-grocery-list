@@ -10,7 +10,7 @@
   <h2>All Recipes</h2>
   <div class='list-group'>
     <%Recipe.all.each do |recipe|%>
-      <a class='list-group-item' href='/recipes/<%=recipe.slug%>'><%=recipe.name%></a>
+      <a class='list-group-item' href='/recipes/<%=recipe.slug%>'><%=recipe.name%> - <%=User.find_by_id(recipe.user_id).name%></a>
     <%end%>
     <a href='/recipes/new' class='btn btn-default'>Create New Recipe</a>
   </div>

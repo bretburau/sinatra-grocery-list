@@ -3,13 +3,16 @@
 
 
 <div class='container'>
-  <h2>Recipe:<%=@recipe.name%></h2>
+  <h2>Recipe: <%=@recipe.name%></h2>
   <h3>Created by: <%=User.find_by_id(@recipe.user_id).name%></h3>
-  <ul>
+  <div class='list-group'>
     <%@recipe.groceries.all.each do |grocery|%>
-      <li><%=grocery.name%></li>
+      <a href='/groceries/<%=grocery.slug%>' class='list-group-item'><%=grocery.name%></a>
     <%end%>
-  </ul>
-  <a href='/recipes/<%=@recipe.slug%>/edit'>Edit this recipe</a><br>
+  </div>
+  <a href='/recipes/<%=@recipe.slug%>/edit' class='btn btn-default'>Edit this recipe</a>
+  <form method="POST" action='/recipes/<%=@recipe.slug%>/delete'>
+    <input type='submit' value='DELETE RECIPE' class='btn btn-default'>
+  </form>
 </div>
 
