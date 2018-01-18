@@ -11,14 +11,14 @@
 
   <form method='POST' action='/users/new'>
     <label for='name'>Enter your name:</label>
-    <input type='text' name='user[name]'><br>
+    <input type='text' name='user[name]' required><br>
     <label for='username'>Enter your username:</label>
-    <input type='text' name='user[username]'><br>
+    <input type='text' name='user[username]' required><br>
     <label for='email'>Enter your email:</label>
-    <input type='email' name='user[email]'><br>
+    <input type='email' name='user[email]' required><br>
     <label for='password'>Enter your password:</label>
-    <input type='password' name='user[password]'><br>
-    <input type='submit' value='submit' class='btn-default'>
+    <input type='password' name='user[password]' required><br>
+    <input type='submit' value='submit' class='btn btn-default'>
   </form>
 </div>
 
