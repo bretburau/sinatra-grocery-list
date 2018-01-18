@@ -15,6 +15,9 @@ class RecipeController < ApplicationController
     if params[:name].empty?
       flash[:message] = "Please enter a recipe name"
       redirect '/recipes/new'
+    elsif Recipe.find_by(name: params[:name])
+      flash[:message] = "That name has already been taken"
+      redirect '/recipes/new'
     else
       recipe = Recipe.new
       recipe.name = params[:name]
