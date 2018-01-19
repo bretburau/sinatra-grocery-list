@@ -10,7 +10,7 @@ Specs:
 - [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying - Groceries and Recipes both have CRUD
 - [x] Include user input validations - All inputs required and username uniqness verified
 - [x] Display validation failures to user with error message (example form URL e.g. /posts/new) - redirects to self with flash message error
-- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+- [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code - all there
 
 Confirm
 - [x] You have a large number of small Git commits
