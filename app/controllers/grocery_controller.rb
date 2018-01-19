@@ -40,6 +40,8 @@ class GroceryController < ApplicationController
   end
 
   post '/groceries/:slug/delete' do
+    #TODO slug not working
     Grocery.find_by_slug(params[:slug]).destroy
+    redirect '/groceries'
   end
 end
