@@ -14,7 +14,7 @@ class RecipeController < ApplicationController
     if params[:name].empty?
       flash[:message] = "Please enter a recipe name"
       redirect '/recipes/new'
-    elsif Recipe.find_by(name: params[:name])
+    elsif Recipe.find_by_slug(params[:name])
       flash[:message] = "That name has already been taken"
       redirect '/recipes/new'
     else
@@ -40,7 +40,11 @@ class RecipeController < ApplicationController
 
   get '/recipes/:slug/edit' do
     get_slug
-    erb :'/recipes/edit'
+    if @recipe.user_id == current_user.id
+      erb :'/recipes/edit'
+    else
+      redirect to '/recipes'
+    end
   end
 
   patch '/recipes/:slug/edit' do
