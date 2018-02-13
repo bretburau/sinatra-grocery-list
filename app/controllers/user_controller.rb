@@ -7,6 +7,7 @@ class UserController < ApplicationController
     end 
 
     get '/users' do
+      redirect '/login' if !logged_in?
       @user = current_user
       erb :'/users/list'
     end
