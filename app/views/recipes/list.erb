@@ -1,12 +1,8 @@
-
-
 <div class='container'>
   <% if flash[:message] %>
     <span class="alert alert-danger" role="alert"><%= flash[:message] %></span>
     <br><br>
   <% end %>
-
-
   <h2>All Recipes</h2>
   <div class='list-group'>
     <%Recipe.all.each do |recipe|%>
