@@ -4,6 +4,5 @@ class CreateGroceries < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :price
     end
-    
   end
 end
